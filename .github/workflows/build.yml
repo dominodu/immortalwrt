@@ -2,7 +2,8 @@ name: Build ImmortalWRT ipq53xx
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    # 北京时间 04:00 = UTC 20:00（前一天）；GitHub cron 用 UTC
+    - cron: "0 20 * * *"
   workflow_dispatch:
 
 permissions:
@@ -104,3 +105,33 @@ jobs:
             - 构建时间（北京时间）：`${{ env.BUILD_STAMP }}`
           files: artifacts/*
           generate_release_notes: false
+
+      - name: Prune old Releases (keep 2 days)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const cutoff = Date.now() - 2 * 24 * 60 * 60 * 1000;
+            const rels = await github.paginate(github.rest.repos.listReleases, {
+              owner: context.repo.owner, repo: context.repo.repo, per_page: 100
+            });
+            // 保留最新 1 个，防止清空；只删机器人发的 build-* 标签
+            for (const [i, rel] of rels.entries()) {
+              if (i === 0) continue;
+              if (!rel.tag_name.startsWith('build-')) continue;
+              const created = new Date(rel.created_at).getTime();
+              if (created < cutoff) {
+                core.info(`delete release ${rel.tag_name} (${rel.created_at})`);
+                try {
+                  await github.rest.repos.deleteRelease({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    release_id: rel.id
+                  });
+                } catch (e) { core.warning(`deleteRelease failed: ${e.message}`); }
+                try {
+                  await github.rest.git.deleteRef({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    ref: `tags/${rel.tag_name}`
+                  });
+                } catch (e) { core.warning(`deleteRef failed: ${e.message}`); }
+              }
+            }
