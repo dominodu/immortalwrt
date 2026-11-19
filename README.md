@@ -2,25 +2,28 @@
 
 > 纯科技！零手工！敢承诺！
 
-# 高质量<免费>交流群
+# ImmortalWRT · ipq53xx 自用自动编译
 
-[IPQ技术讨论群](https://qm.qq.com/q/v7nMhzB4oU)
+本仓库是 [VIKINGYFY/immortalwrt](https://github.com/VIKINGYFY/immortalwrt) `owrt` 分支的个人 fork，
+唯一用途：**每天北京时间早 8 点自动编译固件**，产物发布到 Releases。
 
-# 高质量<付费>中转站
+## 拿固件
+进入 [Releases](../../releases)，下载最新的：
+- `*-squashfs-sysupgrade.bin` —— 已是 ImmortalWRT 时用这个（保留/不保留配置按需）
+- `*-squashfs-factory.bin` —— 原厂固件首次刷入用
 
-[Krill-Code](https://www.krill-code.com/register?invite=959NHQCZGT)
+## 编译内容
+- 源码分支：`owrt`（每次追上游最新 commit）
+- 配置：v6 配置包（在本仓库根目录 `v6-config-pack.tar.gz`，含 .config / 自定义包）
+- 目标：`qualcommbe/ipq53xx`，机型 `jdcloud_re-cs-06`
+- 已含插件：nikki / mihomo-meta / lucky / vantage / fullconenat / logrotate 等
+- 默认 LAN：`192.168.6.1`；默认 WiFi：`OWRT-2.4G` / `OWRT-5.2G`，密码 `12345678`
 
-# 本地编译器
+## 手动触发
+Actions → `Build ImmortalWRT ipq53xx` → Run workflow（已开启每日定时）。
 
-https://github.com/VIKINGYFY/OWRT-Tools.git
-
-# 自用修改版插件
-
-https://github.com/VIKINGYFY/packages.git
-
-# 分支说明
-
-owrt 为多平台通用，MTK、QCA、QCB带有满血PPE驱动。
+## 工作流配置
+`.github/workflows/build.yml`（ccache 加速，产物自动上传 Release）。
 
 # 自用 ImmortalWRT
 
