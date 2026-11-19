@@ -13,7 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     timeout-minutes: 360
-
     steps:
       - name: Checkout repo (contains config pack)
         uses: actions/checkout@v4
@@ -24,7 +23,7 @@ jobs:
           export TZ=Asia/Shanghai
           echo "TZ=Asia/Shanghai" >> $GITHUB_ENV
           echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
-          # 精确到秒的时间戳，格式 26.11.19-15.06.45（北京时间）
+          # 精确到秒的时间戳，格式 yy.mm.dd-hh.mm.ss，如 26.11.19-15.06.45（北京时间）
           echo "BUILD_STAMP=$(date +%y.%m.%d-%H.%M.%S)" >> $GITHUB_ENV
           echo "build time (UTC+8): $(date '+%F %T %Z')"
 
@@ -88,10 +87,17 @@ jobs:
         run: |
           mkdir -p artifacts
           TGT=source/bin/targets/qualcommbe/ipq53xx
-          # 保留 sysupgrade / factory / sha256sums 关键字，飞牛下载脚本靠这些匹配
-          cp $TGT/*sysupgrade.bin "artifacts/immortalwrt-ipq53xx-sysupgrade-${BUILD_STAMP}.bin" 2>/dev/null || true
-          cp $TGT/*factory.bin    "artifacts/immortalwrt-ipq53xx-factory-${BUILD_STAMP}.bin" 2>/dev/null || true
-          cp $TGT/sha256sums      "artifacts/sha256sums-${BUILD_STAMP}.txt" 2>/dev/null || true
+          # 目标格式：qualcommbe-ipq53xx-jdcloud_re-cs-06-squashfs-factory-owrt-yy.mm.dd-hh.mm.ss.bin
+          # 原始产物：immortalwrt-qualcommbe-ipq53xx-jdcloud_re-cs-06-squashfs-factory.bin
+          # 处理：去掉开头 immortalwrt-，在扩展名前插入 -owrt-${BUILD_STAMP}
+          # 仍带 factory / sysupgrade 关键字，飞牛下载脚本照常匹配
+          for f in $TGT/*sysupgrade.bin $TGT/*factory.bin; do
+            [ -e "$f" ] || continue
+            stem=$(basename "$f" .bin)
+            stem=${stem#immortalwrt-}
+            cp "$f" "artifacts/${stem}-owrt-${BUILD_STAMP}.bin"
+          done
+          cp $TGT/sha256sums "artifacts/sha256sums-${BUILD_STAMP}.txt" 2>/dev/null || true
           ls -lh artifacts/
 
       - name: Upload to Release
@@ -112,7 +118,9 @@ jobs:
           script: |
             const cutoff = Date.now() - 2 * 24 * 60 * 60 * 1000;
             const rels = await github.paginate(github.rest.repos.listReleases, {
-              owner: context.repo.owner, repo: context.repo.repo, per_page: 100
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
             });
             // 保留最新 1 个，防止清空；只删机器人发的 build-* 标签
             for (const [i, rel] of rels.entries()) {
@@ -123,15 +131,21 @@ jobs:
                 core.info(`delete release ${rel.tag_name} (${rel.created_at})`);
                 try {
                   await github.rest.repos.deleteRelease({
-                    owner: context.repo.owner, repo: context.repo.repo,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
                     release_id: rel.id
                   });
-                } catch (e) { core.warning(`deleteRelease failed: ${e.message}`); }
+                } catch (e) {
+                  core.warning(`deleteRelease failed: ${e.message}`);
+                }
                 try {
                   await github.rest.git.deleteRef({
-                    owner: context.repo.owner, repo: context.repo.repo,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
                     ref: `tags/${rel.tag_name}`
                   });
-                } catch (e) { core.warning(`deleteRef failed: ${e.message}`); }
+                } catch (e) {
+                  core.warning(`deleteRef failed: ${e.message}`);
+                }
               }
             }
