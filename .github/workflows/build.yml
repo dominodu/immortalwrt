@@ -19,8 +19,13 @@ jobs:
 
       - name: Set build env
         run: |
-          echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+          # ★ 必须先 export TZ 再取时间；GitHub runner 默认 UTC，否则时间戳差 8 小时
+          export TZ=Asia/Shanghai
           echo "TZ=Asia/Shanghai" >> $GITHUB_ENV
+          echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+          # 精确到秒的时间戳，格式 26.11.19-15.06.45（北京时间）
+          echo "BUILD_STAMP=$(date +%y.%m.%d-%H.%M.%S)" >> $GITHUB_ENV
+          echo "build time (UTC+8): $(date '+%F %T %Z')"
 
       - name: Extract v6 config pack
         run: |
@@ -50,6 +55,7 @@ jobs:
           cp -f feeds.conf.default source/feeds.conf.default
           cp -rf files source/files
           cp -rf package/. source/package/
+          # 默认 LAN IP 改成 192.168.6.1（按你编译期的设定）
           sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/bin/config_generate
           sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/etc/banner 2>/dev/null || true
           grep -n '192.168.6.1' source/package/base-files/files/bin/config_generate | head
@@ -80,15 +86,21 @@ jobs:
       - name: Collect artifacts
         run: |
           mkdir -p artifacts
-          cp source/bin/targets/qualcommbe/ipq53xx/*sysupgrade.bin artifacts/ 2>/dev/null || true
-          cp source/bin/targets/qualcommbe/ipq53xx/*factory.bin artifacts/ 2>/dev/null || true
-          cp source/bin/targets/qualcommbe/ipq53xx/sha256sums artifacts/ 2>/dev/null || true
+          TGT=source/bin/targets/qualcommbe/ipq53xx
+          # 保留 sysupgrade / factory / sha256sums 关键字，飞牛下载脚本靠这些匹配
+          cp $TGT/*sysupgrade.bin "artifacts/immortalwrt-ipq53xx-sysupgrade-${BUILD_STAMP}.bin" 2>/dev/null || true
+          cp $TGT/*factory.bin    "artifacts/immortalwrt-ipq53xx-factory-${BUILD_STAMP}.bin" 2>/dev/null || true
+          cp $TGT/sha256sums      "artifacts/sha256sums-${BUILD_STAMP}.txt" 2>/dev/null || true
           ls -lh artifacts/
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ env.BUILD_DATE }}-${{ github.run_number }}
-          name: "ImmortalWRT ipq53xx · ${{ env.SOURCE_HEAD }} · ${{ env.BUILD_DATE }}"
+          name: "ImmortalWRT ipq53xx · ${{ env.SOURCE_HEAD }} · ${{ env.BUILD_STAMP }}"
+          body: |
+            - 固件源码 commit：`${{ env.SOURCE_HEAD }}`（上游 VIKINGYFY/immortalwrt owrt 分支）
+            - 配置包 commit：`${{ github.sha }}`（本 fork）
+            - 构建时间（北京时间）：`${{ env.BUILD_STAMP }}`
           files: artifacts/*
           generate_release_notes: false
