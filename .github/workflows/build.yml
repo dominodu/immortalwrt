@@ -1,1 +1,189 @@
-bmFtZTogQnVpbGQgSW1tb3J0YWxXUlQgaXBxNTN4eAoKb246CiAgd29ya2Zsb3dfZGlzcGF0Y2g6CgpwZXJtaXNzaW9uczoKICBjb250ZW50czogd3JpdGUKCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiB1YnVudHUtMjIuMDQKICAgIHRpbWVvdXQtbWludXRlczogMzYwCiAgICBzdGVwczoKICAgICAgLSBuYW1lOiBDaGVja291dCByZXBvIChjb250YWlucyBjb25maWcgcGFjaykKICAgICAgICB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CgogICAgICAtIG5hbWU6IFNldCBidWlsZCBlbnYKICAgICAgICBydW46IHwKICAgICAgICAgICMg4piFIOW/hemhu+WFiCBleHBvcnQgVFog5YaN5Y+W5pe26Ze077ybR2l0SHViIHJ1bm5lciDpu5jorqQgVVRD77yM5ZCm5YiZ5pe26Ze05oiz5beuIDgg5bCP5pe2CiAgICAgICAgICBleHBvcnQgVFo9QXNpYS9TaGFuZ2hhaQogICAgICAgICAgZWNobyAiVFo9QXNpYS9TaGFuZ2hhaSIgPj4gJEdJVEhVQl9FTlYKICAgICAgICAgIGVjaG8gIkJVSUxEX0RBVEU9JChkYXRlICslWSVtJWQpIiA+PiAkR0lUSFVCX0VOVgogICAgICAgICAgIyDnsr7noa7liLDnp5LnmoTml7bpl7TmiLPvvIzmoLzlvI8geXkubW0uZGQtaGgubW0uc3PvvIzlpoIgMjYuMTEuMTktMTUuMDYuNDXvvIjljJfkuqzml7bpl7TvvIkKICAgICAgICAgIGVjaG8gIkJVSUxEX1NUQU1QPSQoZGF0ZSArJXkuJW0uJWQtJUguJU0uJVMpIiA+PiAkR0lUSFVCX0VOVgogICAgICAgICAgZWNobyAiYnVpbGQgdGltZSAoVVRDKzgpOiAkKGRhdGUgJyslRiAlVCAlWicpIgoKICAgICAgLSBuYW1lOiBFeHRyYWN0IHY2IGNvbmZpZyBwYWNrCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBscyAtbGggdjYtY29uZmlnLXBhY2sudGFyLmd6CiAgICAgICAgICB0YXIgeHpmIHY2LWNvbmZpZy1wYWNrLnRhci5negogICAgICAgICAgZWNobyAiPT09IGV4dHJhY3RlZCA9PT0iCiAgICAgICAgICBscyAtbGQgLmNvbmZpZyBmZWVkcy5jb25mLmRlZmF1bHQgZmlsZXMgcGFja2FnZQogICAgICAgICAgaGVhZCAtMyAuY29uZmlnCgogICAgICAtIG5hbWU6IEluc3RhbGwgYnVpbGQgZGVwZW5kZW5jaWVzCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBzdWRvIGFwdC1nZXQgdXBkYXRlCiAgICAgICAgICBzdWRvIGFwdC1nZXQgaW5zdGFsbCAteSBcCiAgICAgICAgICAgIGJ1aWxkLWVzc2VudGlhbCBjbGFuZyBmbGV4IGJpc29uIGcrKyBnYXdrIFwKICAgICAgICAgICAgZ2NjLW11bHRpbGliIGcrKy1tdWx0aWxpYiBnZXR0ZXh0IGdpdCBsaWJuY3Vyc2VzLWRldiBcCiAgICAgICAgICAgIGxpYnNzbC1kZXYgcHl0aG9uMyBweXRob24zLXNldHVwdG9vbHMgcnN5bmMgc3dpZyBcCiAgICAgICAgICAgIHVuemlwIHpsaWIxZy1kZXYgZmlsZSB3Z2V0IGNjYWNoZQoKICAgICAgLSBuYW1lOiBDbG9uZSB1cHN0cmVhbSBzb3VyY2UgKG93cnQgYnJhbmNoLCBsYXRlc3QpCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBnaXQgY2xvbmUgLS1kZXB0aCAxIC1iIG93cnQgaHR0cHM6Ly9naXRodWIuY29tL1ZJS0lOR1lGWS9pbW1vcnRhbHdydC5naXQgc291cmNlCiAgICAgICAgICBlY2hvICJTT1VSQ0VfSEVBRD0kKGNkIHNvdXJjZSAmJiBnaXQgcmV2LXBhcnNlIC0tc2hvcnQgSEVBRCkiID4+ICRHSVRIVUJfRU5WCgogICAgICAtIG5hbWU6IEFwcGx5IHY2IGNvbmZpZyBwYWNrCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBjcCAtZiAuY29uZmlnIHNvdXJjZS8uY29uZmlnCiAgICAgICAgICBjcCAtZiBmZWVkcy5jb25mLmRlZmF1bHQgc291cmNlL2ZlZWRzLmNvbmYuZGVmYXVsdAogICAgICAgICAgY3AgLXJmIGZpbGVzIHNvdXJjZS9maWxlcwogICAgICAgICAgY3AgLXJmIHBhY2thZ2UvLiBzb3VyY2UvcGFja2FnZS8KICAgICAgICAgICMg6buY6K6kIExBTiBJUCDmlLnmiJAgMTkyLjE2OC42LjHvvIjmjInkvaDnvJbor5HmnJ/nmoTorr7lrprvvIkKICAgICAgICAgIHNlZCAtaSAncy8xOTJcLjE2OFwuMVwuMS8xOTIuMTY4LjYuMS9nJyBzb3VyY2UvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2Jpbi9jb25maWdfZ2VuZXJhdGUKICAgICAgICAgIHNlZCAtaSAncy8xOTJcLjE2OFwuMVwuMS8xOTIuMTY4LjYuMS9nJyBzb3VyY2UvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2V0Yy9iYW5uZXIgMj4vZGV2L251bGwgfHwgdHJ1ZQogICAgICAgICAgZ3JlcCAtbiAnMTkyLjE2OC42LjEnIHNvdXJjZS9wYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvYmluL2NvbmZpZ19nZW5lcmF0ZSB8IGhlYWQKCiAgICAgIC0gbmFtZTogUmVzdG9yZSBjY2FjaGUKICAgICAgICB1c2VzOiBhY3Rpb25zL2NhY2hlQHY0CiAgICAgICAgd2l0aDoKICAgICAgICAgIHBhdGg6IH4vLmNjYWNoZQogICAgICAgICAga2V5OiBjY2FjaGUtaXBxNTN4eC0ke3sgZ2l0aHViLnJ1bl9pZCB9fQogICAgICAgICAgcmVzdG9yZS1rZXlzOiBjY2FjaGUtaXBxNTN4eC0KCiAgICAgIC0gbmFtZTogU2V0IGNjYWNoZSBzaXplCiAgICAgICAgcnVuOiBjY2FjaGUgLU0gNUcKCiAgICAgIC0gbmFtZTogRmVlZHMgKyBkZWZjb25maWcKICAgICAgICB3b3JraW5nLWRpcmVjdG9yeTogc291cmNlCiAgICAgICAgcnVuOiB8CiAgICAgICAgICAuL3NjcmlwdHMvZmVlZHMgdXBkYXRlIC1hCiAgICAgICAgICAuL3NjcmlwdHMvZmVlZHMgaW5zdGFsbCAtYQogICAgICAgICAgbWFrZSBkZWZjb25maWcKICAgICAgICAgIGVjaG8gIj09PSBrZXkgcGFja2FnZXMgPT09IgogICAgICAgICAgZ3JlcCAtRSAnQ09ORklHX1BBQ0tBR0VfKGx1Y2t5fG5pa2tpfG1paG9tby1tZXRhfGxvZ3JvdGF0ZXx0Y3BkdW1wfGpxfHlxKScgLmNvbmZpZyB8IGhlYWQgLTIwCgogICAgICAtIG5hbWU6IEJ1aWxkIGZpcm13YXJlCiAgICAgICAgd29ya2luZy1kaXJlY3Rvcnk6IHNvdXJjZQogICAgICAgIHJ1bjogbWFrZSAtaiQobnByb2MpIFY9cwoKICAgICAgLSBuYW1lOiBHZXQga2VybmVsIHZlcnNpb24KICAgICAgICB3b3JraW5nLWRpcmVjdG9yeTogc291cmNlCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBLVkVSPSQoY2F0IHRhcmdldC9saW51eC9nZW5lcmljL2tlcm5lbC02LjE4IDI+L2Rldi9udWxsIHwgZ3JlcCAnXkxJTlVYX1ZFUlNJT04tNi4xOCcgfCBzZWQgJ3MvLio9IC8vJykKICAgICAgICAgIFsgLW4gIiRLVkVSIiBdIHx8IEtWRVI9Ii54IgogICAgICAgICAgZWNobyAiS0VSTkVMX1ZFUj02LjE4JHtLVkVSfSIgPj4gJEdJVEhVQl9FTlYKICAgICAgICAgIGVjaG8gIktlcm5lbCB2ZXJzaW9uOiA2LjE4JHtLVkVSfSIKCiAgICAgIC0gbmFtZTogQ29sbGVjdCBhcnRpZmFjdHMKICAgICAgICBydW46IHwKICAgICAgICAgIG1rZGlyIC1wIGFydGlmYWN0cwogICAgICAgICAgVEdUPXNvdXJjZS9iaW4vdGFyZ2V0cy9xdWFsY29tbWJlL2lwcTUzeHgKICAgICAgICAgICMg55uu5qCH5qC85byP77yacXVhbGNvbW1iZS1pcHE1M3h4LWpkY2xvdWRfcmUtY3MtMDYtc3F1YXNoZnMtZmFjdG9yeS1vd3J0LXl5Lm1tLmRkLWhoLm1tLnNzLmJpbgogICAgICAgICAgIyDljp/lp4vkuqfnianvvJppbW1vcnRhbHdydC1xdWFsY29tbWJlLWlwcTUzeHgtamRjbG91ZF9yZS1jcy0wNi1zcXVhc2hmcy1mYWN0b3J5LmJpbgogICAgICAgICAgIyDlpITnkIbvvJrljrvmjonlvIDlpLQgaW1tb3J0YWx3cnQt77yM5Zyo5omp5bGV5ZCN5YmN5o+S5YWlIC1vd3J0LSR7QlVJTERfU1RBTVB9CiAgICAgICAgICAjIOS7jeW4piBmYWN0b3J5IC8gc3lzdXBncmFkZSDlhbPplK7lrZfvvIzpo57niZvkuIvovb3ohJrmnKznhafluLjljLnphY0KICAgICAgICAgIGZvciBmIGluICRUR1QvKnN5c3VwZ3JhZGUuYmluICRUR1QvKmZhY3RvcnkuYmluOyBkbwogICAgICAgICAgICBbIC1lICIkZiIgXSB8fCBjb250aW51ZQogICAgICAgICAgICBzdGVtPSQoYmFzZW5hbWUgIiRmIiAuYmluKQogICAgICAgICAgICBzdGVtPSR7c3RlbSNpbW1vcnRhbHdydC19CiAgICAgICAgICAgIGNwICIkZiIgImFydGlmYWN0cy8ke3N0ZW19LW93cnQtJHtCVUlMRF9TVEFNUH0uYmluIgogICAgICAgICAgZG9uZQogICAgICAgICAgIyBzaGEyNTZzdW1zIOS4jeaUueWQje+8muS4jeWKoOaXtumXtOaIs+OAgeS4jeWKoOWQjue8gO+8jOS/neaMgeWOn+Wni+aWh+S7tuWQjQogICAgICAgICAgY3AgIiRUR1Qvc2hhMjU2c3VtcyIgImFydGlmYWN0cy9zaGEyNTZzdW1zIiAyPi9kZXYvbnVsbCB8fCB0cnVlCiAgICAgICAgICAjIOi9r+S7tuWMhea4heWNlShPcGVuV3J0IOe8luivkeaXtuiHquWKqOeUn+aIkO+8jOWIl+WHuuWbuuS7tuWunumZheWuieijheeahOWFqOmDqOWMhSvniYjmnKwpCiAgICAgICAgICBjcCAkVEdULyoubWFuaWZlc3QgYXJ0aWZhY3RzLyAyPi9kZXYvbnVsbCB8fCB0cnVlCiAgICAgICAgICAjIOeUn+aIkOeyvueugOeahCBsdWNpLWFwcCAvIOS7o+eQhuW6lOeUqOWIl+ihqO+8jOS+myBSZWxlYXNlIOato+aWh+W8leeUqAogICAgICAgICAgTUY9JChscyAkVEdULyoubWFuaWZlc3QgMj4vZGV2L251bGwgfCBoZWFkIC0xKQogICAgICAgICAgaWYgWyAtbiAiJE1GIiBdOyB0aGVuCiAgICAgICAgICAgIGdyZXAgLW9FICdeKGx1Y2ktYXBwfGx1Y2ktaTE4biktW2EtejAtOS1dKycgIiRNRiIgfCBzb3J0IC11ID4gYXJ0aWZhY3RzL2FwcC1saXN0LnR4dCB8fCB0cnVlCiAgICAgICAgICAgIGdyZXAgLWlFICdeKG5pa2tpfG1paG9tb3xsdWNreXxzaW5nLWJveHxob21lcHJveHl8cGFzc3dhbGx8bG9ncm90YXRlfHRjcGR1bXApICcgIiRNRiIgfCBjdXQgLWQnICcgLWYxIHwgc29ydCAtdSA+PiBhcnRpZmFjdHMvYXBwLWxpc3QudHh0IHx8IHRydWUKICAgICAgICAgICAgc29ydCAtdSBhcnRpZmFjdHMvYXBwLWxpc3QudHh0IC1vIGFydGlmYWN0cy9hcHAtbGlzdC50eHQKICAgICAgICAgICAgIyDlhpnlhaXnjq/looPlj5jph4/kvpsgUmVsZWFzZSDmraPmloflvJXnlKjvvIjlpJrooYwgaGVyZWRvYyDor63ms5XvvIkKICAgICAgICAgICAgewogICAgICAgICAgICAgIGVjaG8gJ0FQUF9MSVNUPDxBUFBFT0YnCiAgICAgICAgICAgICAgY2F0IGFydGlmYWN0cy9hcHAtbGlzdC50eHQKICAgICAgICAgICAgICBlY2hvICdBUFBFT0YnCiAgICAgICAgICAgIH0gPj4gIiRHSVRIVUJfRU5WIgogICAgICAgICAgZmkKICAgICAgICAgIGxzIC1saCBhcnRpZmFjdHMvCgogICAgICAtIG5hbWU6IFVwbG9hZCB0byBSZWxlYXNlCiAgICAgICAgdXNlczogc29mdHByb3BzL2FjdGlvbi1naC1yZWxlYXNlQHYyCiAgICAgICAgd2l0aDoKICAgICAgICAgIHRhZ19uYW1lOiBidWlsZC0ke3sgZW52LkJVSUxEX0RBVEUgfX0tJHt7IGdpdGh1Yi5ydW5fbnVtYmVyIH19CiAgICAgICAgICBuYW1lOiAiSW1tb3J0YWxXUlQgaXBxNTN4eCDCtyAke3sgZW52LlNPVVJDRV9IRUFEIH19IMK3ICR7eyBlbnYuQlVJTERfU1RBTVAgfX0iCiAgICAgICAgICBib2R5OiB8CiAgICAgICAgICAgIOi/meaYr+S4quS6rOS4nOS6kei1teS6kUJFNjUwMC9yZS1jcy0wNuiHqueUqOWbuuS7tuWMhQoKICAgICAgICAgICAg5rqQ56CB77yaaHR0cHM6Ly9naXRodWIuY29tL1ZJS0lOR1lGWS9pbW1vcnRhbHdydC5naXQKICAgICAgICAgICAg5YiG5pSv77yab3dydAogICAgICAgICAgICDmj5DkuqTvvJoke3sgZW52LlNPVVJDRV9IRUFEIH19CiAgICAgICAgICAgIOmFjee9ru+8mklQUTUzWFgKICAgICAgICAgICAg5bmz5Y+w77yacXVhbGNvbW1iZQoKICAgICAgICAgICAg55m75b2V5Zyw5Z2A77yaMTkyLjE2OC42LjEKICAgICAgICAgICAg55m75b2V5a+G56CB77ya5pegCiAgICAgICAgICAgIFdJRknlkI3np7DvvJpPV1JUCiAgICAgICAgICAgIFdJRknlr4bnoIHvvJoxMjM0NTY3OAoKICAgICAgICAgICAg5YaF5qC454mI5pys77yaJHt7IGVudi5LRVJORUxfVkVSIH19CiAgICAgICAgICAgIOaPkuS7tuWIl+ihqO+8mgogICAgICAgICAgICBgYGAKICAgICAgICAgICAgJHt7IGVudi5BUFBfTElTVCB9fQogICAgICAgICAgICBgYGAKICAgICAgICAgICAgPiDlrozmlbTova/ku7bljIXmuIXljZXvvIjlkKvmiYDmnInlupXlsYLlupPlj4rniYjmnKzvvInop4HpmYTku7YgYC5tYW5pZmVzdGAg5paH5Lu244CCCgogICAgICAgICAgZmlsZXM6IGFydGlmYWN0cy8qCiAgICAgICAgICBnZW5lcmF0ZV9yZWxlYXNlX25vdGVzOiBmYWxzZQoKICAgICAgLSBuYW1lOiBQcnVuZSBvbGQgUmVsZWFzZXMgKGtlZXAgMiBkYXlzKQogICAgICAgIHVzZXM6IGFjdGlvbnMvZ2l0aHViLXNjcmlwdEB2NwogICAgICAgIHdpdGg6CiAgICAgICAgICBzY3JpcHQ6IHwKICAgICAgICAgICAgY29uc3QgY3V0b2ZmID0gRGF0ZS5ub3coKSAtIDIgKiAyNCAqIDYwICogNjAgKiAxMDAwOwogICAgICAgICAgICBjb25zdCByZWxzID0gYXdhaXQgZ2l0aHViLnBhZ2luYXRlKGdpdGh1Yi5yZXN0LnJlcG9zLmxpc3RSZWxlYXNlcywgewogICAgICAgICAgICAgIG93bmVyOiBjb250ZXh0LnJlcG8ub3duZXIsCiAgICAgICAgICAgICAgcmVwbzogY29udGV4dC5yZXBvLnJlcG8sCiAgICAgICAgICAgICAgcGVyX3BhZ2U6IDEwMAogICAgICAgICAgICB9KTsKICAgICAgICAgICAgLy8g5L+d55WZ5pyA5pawIDEg5Liq77yM6Ziy5q2i5riF56m677yb5Y+q5Yig5py65Zmo5Lq65Y+R55qEIGJ1aWxkLSog5qCH562+CiAgICAgICAgICAgIGZvciAoY29uc3QgW2ksIHJlbF0gb2YgcmVscy5lbnRyaWVzKCkpIHsKICAgICAgICAgICAgICBpZiAoaSA9PT0gMCkgY29udGludWU7CiAgICAgICAgICAgICAgaWYgKCFyZWwudGFnX25hbWUuc3RhcnRzV2l0aCgnYnVpbGQtJykpIGNvbnRpbnVlOwogICAgICAgICAgICAgIGNvbnN0IGNyZWF0ZWQgPSBuZXcgRGF0ZShyZWwuY3JlYXRlZF9hdCkuZ2V0VGltZSgpOwogICAgICAgICAgICAgIGlmIChjcmVhdGVkIDwgY3V0b2ZmKSB7CiAgICAgICAgICAgICAgICBjb3JlLmluZm8oYGRlbGV0ZSByZWxlYXNlICR7cmVsLnRhZ19uYW1lfSAoJHtyZWwuY3JlYXRlZF9hdH0pYCk7CiAgICAgICAgICAgICAgICB0cnkgewogICAgICAgICAgICAgICAgICBhd2FpdCBnaXRodWIucmVzdC5yZXBvcy5kZWxldGVSZWxlYXNlKHsKICAgICAgICAgICAgICAgICAgICBvd25lcjogY29udGV4dC5yZXBvLm93bmVyLAogICAgICAgICAgICAgICAgICAgIHJlcG86IGNvbnRleHQucmVwby5yZXBvLAogICAgICAgICAgICAgICAgICAgIHJlbGVhc2VfaWQ6IHJlbC5pZAogICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgICAgIH0gY2F0Y2ggKGUpIHsKICAgICAgICAgICAgICAgICAgY29yZS53YXJuaW5nKGBkZWxldGVSZWxlYXNlIGZhaWxlZDogJHtlLm1lc3NhZ2V9YCk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB0cnkgewogICAgICAgICAgICAgICAgICBhd2FpdCBnaXRodWIucmVzdC5naXQuZGVsZXRlUmVmKHsKICAgICAgICAgICAgICAgICAgICBvd25lcjogY29udGV4dC5yZXBvLm93bmVyLAogICAgICAgICAgICAgICAgICAgIHJlcG86IGNvbnRleHQucmVwby5yZXBvLAogICAgICAgICAgICAgICAgICAgIHJlZjogYHRhZ3MvJHtyZWwudGFnX25hbWV9YAogICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgICAgIH0gY2F0Y2ggKGUpIHsKICAgICAgICAgICAgICAgICAgY29yZS53YXJuaW5nKGBkZWxldGVSZWYgZmFpbGVkOiAke2UubWVzc2FnZX1gKTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0K
+name: Build ImmortalWRT ipq53xx
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repo (contains config pack)
+        uses: actions/checkout@v4
+
+      - name: Set build env
+        run: |
+          # ★ 必须先 export TZ 再取时间；GitHub runner 默认 UTC，否则时间戳差 8 小时
+          export TZ=Asia/Shanghai
+          echo "TZ=Asia/Shanghai" >> $GITHUB_ENV
+          echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+          # 精确到秒的时间戳，格式 yy.mm.dd-hh.mm.ss，如 26.11.19-15.06.45（北京时间）
+          echo "BUILD_STAMP=$(date +%y.%m.%d-%H.%M.%S)" >> $GITHUB_ENV
+          echo "build time (UTC+8): $(date '+%F %T %Z')"
+
+      - name: Extract v6 config pack
+        run: |
+          ls -lh v6-config-pack.tar.gz
+          tar xzf v6-config-pack.tar.gz
+          echo "=== extracted ==="
+          ls -ld .config feeds.conf.default files package
+          head -3 .config
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential clang flex bison g++ gawk \
+            gcc-multilib g++-multilib gettext git libncurses-dev \
+            libssl-dev python3 python3-setuptools rsync swig \
+            unzip zlib1g-dev file wget ccache
+
+      - name: Clone upstream source (owrt branch, latest)
+        run: |
+          git clone --depth 1 -b owrt https://github.com/VIKINGYFY/immortalwrt.git source
+          echo "SOURCE_HEAD=$(cd source && git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Apply v6 config pack
+        run: |
+          cp -f .config source/.config
+          cp -f feeds.conf.default source/feeds.conf.default
+          cp -rf files source/files
+          cp -rf package/. source/package/
+          # 默认 LAN IP 改成 192.168.6.1（按你编译期的设定）
+          sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/bin/config_generate
+          sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/etc/banner 2>/dev/null || true
+          grep -n '192.168.6.1' source/package/base-files/files/bin/config_generate | head
+
+      - name: Restore ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          key: ccache-ipq53xx-${{ github.run_id }}
+          restore-keys: ccache-ipq53xx-
+
+      - name: Set ccache size
+        run: ccache -M 5G
+
+      - name: Feeds + defconfig
+        working-directory: source
+        run: |
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+          make defconfig
+          echo "=== key packages ==="
+          grep -E 'CONFIG_PACKAGE_(lucky|nikki|mihomo-meta|logrotate|tcpdump|jq|yq)' .config | head -20
+
+      - name: Build firmware
+        working-directory: source
+        run: make -j$(nproc) V=s
+
+      - name: Get kernel version
+        working-directory: source
+        run: |
+          KVER=$(cat target/linux/generic/kernel-6.18 2>/dev/null | grep '^LINUX_VERSION-6.18' | sed 's/.*= //')
+          [ -n "$KVER" ] || KVER=".x"
+          echo "KERNEL_VER=6.18${KVER}" >> $GITHUB_ENV
+          echo "Kernel version: 6.18${KVER}"
+
+      - name: Collect artifacts
+        run: |
+          mkdir -p artifacts
+          TGT=source/bin/targets/qualcommbe/ipq53xx
+          # 目标格式：qualcommbe-ipq53xx-jdcloud_re-cs-06-squashfs-factory-owrt-yy.mm.dd-hh.mm.ss.bin
+          # 原始产物：immortalwrt-qualcommbe-ipq53xx-jdcloud_re-cs-06-squashfs-factory.bin
+          # 处理：去掉开头 immortalwrt-，在扩展名前插入 -owrt-${BUILD_STAMP}
+          # 仍带 factory / sysupgrade 关键字，飞牛下载脚本照常匹配
+          for f in $TGT/*sysupgrade.bin $TGT/*factory.bin; do
+            [ -e "$f" ] || continue
+            stem=$(basename "$f" .bin)
+            stem=${stem#immortalwrt-}
+            cp "$f" "artifacts/${stem}-owrt-${BUILD_STAMP}.bin"
+          done
+          # sha256sums 不改名：不加时间戳、不加后缀，保持原始文件名
+          cp "$TGT/sha256sums" "artifacts/sha256sums" 2>/dev/null || true
+          # 软件包清单(OpenWrt 编译时自动生成，列出固件实际安装的全部包+版本)
+          cp $TGT/*.manifest artifacts/ 2>/dev/null || true
+          # 生成精简的 luci-app / 代理应用列表，供 Release 正文引用
+          MF=$(ls $TGT/*.manifest 2>/dev/null | head -1)
+          if [ -n "$MF" ]; then
+            grep -oE '^(luci-app|luci-i18n)-[a-z0-9-]+' "$MF" | sort -u > artifacts/app-list.txt || true
+            grep -iE '^(nikki|mihomo|lucky|sing-box|homeproxy|passwall|logrotate|tcpdump) ' "$MF" | cut -d' ' -f1 | sort -u >> artifacts/app-list.txt || true
+            sort -u artifacts/app-list.txt -o artifacts/app-list.txt
+            # 写入环境变量供 Release 正文引用（多行 heredoc 语法）
+            {
+              echo 'APP_LIST<<APPEOF'
+              cat artifacts/app-list.txt
+              echo 'APPEOF'
+            } >> "$GITHUB_ENV"
+          fi
+          ls -lh artifacts/
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ env.BUILD_DATE }}-${{ github.run_number }}
+          name: "ImmortalWRT ipq53xx · ${{ env.SOURCE_HEAD }} · ${{ env.BUILD_STAMP }}"
+          body: |
+            这是个京东云赵云BE6500/re-cs-06自用固件包
+
+            源码：https://github.com/VIKINGYFY/immortalwrt.git
+            分支：owrt
+            提交：${{ env.SOURCE_HEAD }}
+            配置：IPQ53XX
+            平台：qualcommbe
+
+            登录地址：192.168.6.1
+            登录密码：无
+            WIFI名称：OWRT
+            WIFI密码：12345678
+
+            内核版本：${{ env.KERNEL_VER }}
+            插件列表：
+            ```
+            ${{ env.APP_LIST }}
+            ```
+            > 完整软件包清单（含所有底层库及版本）见附件 `.manifest` 文件。
+
+          files: artifacts/*
+          generate_release_notes: false
+
+      - name: Prune old Releases (keep 2 days)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const cutoff = Date.now() - 2 * 24 * 60 * 60 * 1000;
+            const rels = await github.paginate(github.rest.repos.listReleases, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100
+            });
+            // 保留最新 1 个，防止清空；只删机器人发的 build-* 标签
+            for (const [i, rel] of rels.entries()) {
+              if (i === 0) continue;
+              if (!rel.tag_name.startsWith('build-')) continue;
+              const created = new Date(rel.created_at).getTime();
+              if (created < cutoff) {
+                core.info(`delete release ${rel.tag_name} (${rel.created_at})`);
+                try {
+                  await github.rest.repos.deleteRelease({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    release_id: rel.id
+                  });
+                } catch (e) {
+                  core.warning(`deleteRelease failed: ${e.message}`);
+                }
+                try {
+                  await github.rest.git.deleteRef({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    ref: `tags/${rel.tag_name}`
+                  });
+                } catch (e) {
+                  core.warning(`deleteRef failed: ${e.message}`);
+                }
+              }
+            }
