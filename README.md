@@ -1,7 +1,7 @@
 # ImmortalWRT · ipq53xx 自用自动编译
 
 本仓库是 [VIKINGYFY/immortalwrt](https://github.com/VIKINGYFY/immortalwrt) `owrt` 分支的个人 fork，
-唯一用途：**每天北京时间早 8 点自动编译固件**，产物发布到 Releases。
+唯一用途：**每天北京时间早 7 点自动编译固件**，产物发布到 Releases。
 
 ## 拿固件
 进入 [Releases](../../releases)，下载最新的：
@@ -14,12 +14,6 @@
 - 目标：`qualcommbe/ipq53xx`，机型 `jdcloud_re-cs-06`
 - 已含插件：nikki / mihomo-meta / lucky / vantage / fullconenat / logrotate 等
 - 默认 LAN：`192.168.6.1`；默认 WiFi：`OWRT-2.4G` / `OWRT-5.2G`，密码 `12345678`
-
-## 手动触发
-Actions → `Build ImmortalWRT ipq53xx` → Run workflow（已开启每日定时）。
-
-## 工作流配置
-`.github/workflows/build.yml`（ccache 加速，产物自动上传 Release）。
 
 部分源码取自以下项目：
 
