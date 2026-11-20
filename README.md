@@ -1,7 +1,3 @@
-# ImmortalWRT AI Edition
-
-> 纯科技！零手工！敢承诺！
-
 # ImmortalWRT · ipq53xx 自用自动编译
 
 本仓库是 [VIKINGYFY/immortalwrt](https://github.com/VIKINGYFY/immortalwrt) `owrt` 分支的个人 fork，
@@ -24,8 +20,6 @@ Actions → `Build ImmortalWRT ipq53xx` → Run workflow（已开启每日定时
 
 ## 工作流配置
 `.github/workflows/build.yml`（ccache 加速，产物自动上传 Release）。
-
-# 自用 ImmortalWRT
 
 部分源码取自以下项目：
 
