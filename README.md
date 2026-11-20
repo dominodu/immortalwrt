@@ -7,5 +7,5 @@
 - 源码分支：`owrt`（每日追上游最新 commit）
 - 配置：v6 配置包（在本仓库根目录 `v6-config-pack.tar.gz`，含 .config / 自定义包）
 - 目标：`qualcommbe/ipq53xx`，机型 `jdcloud_re-cs-06`
-- 已含插件：nikki / lucky / 等
+- 已含插件：nikki / lucky 等
 - 默认 LAN：`192.168.6.1`；默认 WiFi：`OWRT`，密码 `12345678`
