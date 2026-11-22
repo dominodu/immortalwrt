@@ -42,6 +42,7 @@ jobs:
           # 完整克隆（不去 --depth），保留全部 git 历史
           git clone -b owrt https://github.com/VIKINGYFY/immortalwrt.git source
           echo "SOURCE_HEAD=$(cd source && git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "SOURCE_SHA=$(cd source && git rev-parse HEAD)" >> $GITHUB_ENV
           echo "Full clone done. commit count: $(cd source && git rev-list --count HEAD)"
 
       - name: Apply upstream config + LAN IP
@@ -106,18 +107,12 @@ jobs:
           cp "$TGT/sha256sums" "artifacts/sha256sums" 2>/dev/null || true
           # 软件包清单(OpenWrt 编译时自动生成，列出固件实际安装的全部包+版本)
           cp $TGT/*.manifest artifacts/ 2>/dev/null || true
-          # 生成精简的 luci-app / 代理应用列表，供 Release 正文引用
+          # 生成插件列表供 Release 正文引用：luci-app / luci-theme，空格分隔单行（贴图上游格式）
           MF=$(ls $TGT/*.manifest 2>/dev/null | head -1)
           if [ -n "$MF" ]; then
-            grep -oE '^(luci-app|luci-i18n)-[a-z0-9-]+' "$MF" | sort -u > artifacts/app-list.txt || true
-            grep -iE '^(nikki|mihomo|lucky|sing-box|homeproxy|passwall|logrotate|tcpdump) ' "$MF" | cut -d' ' -f1 | sort -u >> artifacts/app-list.txt || true
-            sort -u artifacts/app-list.txt -o artifacts/app-list.txt
-            # 写入环境变量供 Release 正文引用（多行 heredoc 语法）
-            {
-              echo 'APP_LIST<<APPEOF'
-              cat artifacts/app-list.txt
-              echo 'APPEOF'
-            } >> "$GITHUB_ENV"
+            grep -oE '^(luci-app|luci-theme|luci-i18n)-[a-z0-9-]+' "$MF" | sort -u > artifacts/app-list.txt || true
+            # 拼成一行、空格分隔，直接放在“插件列表：”后面
+            echo "APP_LIST=$(tr '\n' ' ' < artifacts/app-list.txt | sed 's/ *$//')" >> "$GITHUB_ENV"
           fi
           ls -lh artifacts/
 
@@ -127,25 +122,27 @@ jobs:
           tag_name: build-${{ env.BUILD_DATE }}-${{ github.run_number }}
           name: "ImmortalWRT ipq53xx · ${{ env.SOURCE_HEAD }} · ${{ env.BUILD_STAMP }}"
           body: |
-            这是个京东云赵云BE6500/re-cs-06自用固件包
+            这是个平台固件包，内含多个设备！
+            请注意选择你需要的设备固件！
+            不要问，刷就完了！
+
+            全系带开源硬件加速，别问了！
 
             源码：https://github.com/VIKINGYFY/immortalwrt.git
             分支：owrt
-            提交：${{ env.SOURCE_HEAD }}
+            提交：${{ env.SOURCE_SHA }}
+
             配置：IPQ53XX
             平台：qualcommbe
 
             登录地址：192.168.6.1
             登录密码：无
+
             WIFI名称：OWRT
             WIFI密码：12345678
 
             内核版本：${{ env.KERNEL_VER }}
-            插件列表：
-            ```
-            ${{ env.APP_LIST }}
-            ```
-            > 完整软件包清单（含所有底层库及版本）见附件 `.manifest` 文件。
+            插件列表：${{ env.APP_LIST }}
 
           files: artifacts/*
           generate_release_notes: false
