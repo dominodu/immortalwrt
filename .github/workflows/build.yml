@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 360
     steps:
-      - name: Checkout repo (contains config pack)
+      - name: Checkout repo (contains config-ipq53xx.txt)
         uses: actions/checkout@v4
 
       - name: Set build env
@@ -28,14 +28,6 @@ jobs:
           echo "BUILD_STAMP=$(date +%y.%m.%d-%H.%M.%S)" >> $GITHUB_ENV
           echo "build time (UTC+8): $(date '+%F %T %Z')"
 
-      - name: Extract v6 config pack
-        run: |
-          ls -lh v6-config-pack.tar.gz
-          tar xzf v6-config-pack.tar.gz
-          echo "=== extracted ==="
-          ls -ld .config feeds.conf.default files package
-          head -3 .config
-
       - name: Install build dependencies
         run: |
           sudo apt-get update
@@ -45,18 +37,22 @@ jobs:
             libssl-dev python3 python3-setuptools rsync swig \
             unzip zlib1g-dev file wget ccache
 
-      - name: Clone upstream source (owrt branch, latest)
+      - name: Clone upstream source (owrt branch, full history, latest)
         run: |
-          git clone --depth 1 -b owrt https://github.com/VIKINGYFY/immortalwrt.git source
+          # 完整克隆（不去 --depth），保留全部 git 历史
+          git clone -b owrt https://github.com/VIKINGYFY/immortalwrt.git source
           echo "SOURCE_HEAD=$(cd source && git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "Full clone done. commit count: $(cd source && git rev-list --count HEAD)"
 
-      - name: Apply v6 config pack
+      - name: Apply upstream config + LAN IP
         run: |
-          cp -f .config source/.config
-          cp -f feeds.conf.default source/feeds.conf.default
-          cp -rf files source/files
-          cp -rf package/. source/package/
-          # 默认 LAN IP 改成 192.168.6.1（按你编译期的设定）
+          # 软件包基线：上游 IPQ53XX release 的 Config（含 homeproxy+sing-box+lucky 等）
+          # feeds 用源码自带的默认 feeds.conf.default（packages/luci/routing/telephony）
+          ls -lh config-ipq53xx.txt
+          cp -f config-ipq53xx.txt source/.config
+          echo "=== key packages check ==="
+          grep -E '^CONFIG_PACKAGE_(lucky|luci-app-lucky|luci-app-homeproxy|sing-box|nikki|mihomo-meta)=y$' source/.config || true
+          # 默认 LAN IP 改成 192.168.6.1
           sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/bin/config_generate
           sed -i 's/192\.168\.1\.1/192.168.6.1/g' source/package/base-files/files/etc/banner 2>/dev/null || true
           grep -n '192.168.6.1' source/package/base-files/files/bin/config_generate | head
@@ -77,8 +73,8 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           make defconfig
-          echo "=== key packages ==="
-          grep -E 'CONFIG_PACKAGE_(lucky|nikki|mihomo-meta|logrotate|tcpdump|jq|yq)' .config | head -20
+          echo "=== key packages after defconfig ==="
+          grep -E 'CONFIG_PACKAGE_(lucky|luci-app-lucky|luci-app-homeproxy|sing-box|nikki|mihomo-meta)' .config | head -20
 
       - name: Build firmware
         working-directory: source
