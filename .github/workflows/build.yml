@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 360
     steps:
       - name: Checkout repo (contains config-ipq53xx.txt)
@@ -62,8 +62,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.ccache
-          key: ccache-ipq53xx-${{ github.run_id }}
-          restore-keys: ccache-ipq53xx-
+          key: ccache-ipq53xx-2404-${{ github.run_id }}
+          restore-keys: ccache-ipq53xx-2404-
 
       - name: Set ccache size
         run: ccache -M 5G
