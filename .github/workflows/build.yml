@@ -35,7 +35,9 @@ jobs:
             build-essential clang flex bison g++ gawk \
             gcc-multilib g++-multilib gettext git libncurses-dev \
             libssl-dev python3 python3-setuptools rsync swig \
-            unzip zlib1g-dev file wget ccache
+            unzip zlib1g-dev file wget ccache \
+            llvm lld libbpf-dev libclang-dev libdw-dev libelf-dev \
+            jq ninja-build
 
       - name: Clone upstream source (owrt branch, full history, latest)
         run: |
@@ -85,11 +87,21 @@ jobs:
           # 3) 用户要求：加入 lucky（本地固化的 v3.5.0 核心 + LuCI）
           tar -xzf "$GITHUB_WORKSPACE/lucky-packages.tar.gz" -C .
 
-          # 4) 和上游一致的默认主题 + LAN IP；其他设置不动
+          # 4) 和上游一致的默认主题 + LAN IP + WiFi 默认值
           find ./feeds/luci/collections/ -type f -name "Makefile" -exec sed -i "s/luci-theme-bootstrap/luci-theme-vantage/g" {} +
+          find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js" -exec sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g" {} +
           sed -i 's/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g' ./package/base-files/files/bin/config_generate
+          for f in ./package/emortal/luci-app-router-tool/root/etc/config/router-tool ./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc; do
+            [ -f "$f" ] && sed -i "s/ssid '.*'/ssid 'OWRT'/g; s/key '.*'/key '12345678'/g" "$f"
+          done
+
+          # 5) 上游构建主机适配：Go bootstrap / host LLVM BPF 工具链 / 关闭 host Python PGO
+          bash "$GITHUB_WORKSPACE/Scripts/prepare-build-host.sh"
 
           make defconfig
+
+          # 6) 上游 Rust 工具链适配（defconfig 之后，和上游 WRT-CORE 顺序一致）
+          bash "$GITHUB_WORKSPACE/Scripts/prepare-rust.sh"
 
           echo "=== key packages after defconfig ==="
           grep -E '^CONFIG_PACKAGE_(lucky|luci-app-lucky|luci-i18n-lucky-zh-cn|luci-app-vantage|luci-theme-vantage|luci-app-homeproxy|sing-box)=y$' .config | head -30
