@@ -68,14 +68,33 @@ jobs:
       - name: Set ccache size
         run: ccache -M 5G
 
-      - name: Feeds + defconfig
+      - name: Feeds + upstream packages + defconfig
         working-directory: source
         run: |
+          set -e
           ./scripts/feeds update -a
           ./scripts/feeds install -a
+
+          # 1) 和 VIKINGYFY 官方 CI 完全相同的第三方软件包源，保证软件包集合与上游一致
+          bash "$GITHUB_WORKSPACE/Scripts/Packages.sh"
+          bash "$GITHUB_WORKSPACE/Scripts/Handles.sh"
+
+          # 2) 用户要求：不要 nikki（只删源码，配置里本来也没选）
+          rm -rf ./package/OpenWrt-nikki ./package/nikki
+
+          # 3) 用户要求：加入 lucky（本地固化的 v3.5.0 核心 + LuCI）
+          tar -xzf "$GITHUB_WORKSPACE/lucky-packages.tar.gz" -C .
+
+          # 4) 和上游一致的默认主题 + LAN IP；其他设置不动
+          find ./feeds/luci/collections/ -type f -name "Makefile" -exec sed -i "s/luci-theme-bootstrap/luci-theme-vantage/g" {} +
+          sed -i 's/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g' ./package/base-files/files/bin/config_generate
+
           make defconfig
+
           echo "=== key packages after defconfig ==="
-          grep -E 'CONFIG_PACKAGE_(lucky|luci-app-lucky|luci-app-homeproxy|sing-box|nikki|mihomo-meta)' .config | head -20
+          grep -E '^CONFIG_PACKAGE_(lucky|luci-app-lucky|luci-i18n-lucky-zh-cn|luci-app-vantage|luci-theme-vantage|luci-app-homeproxy|sing-box)=y$' .config | head -30
+          echo "=== target device ==="
+          grep -E '^CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_.*=y$' .config
 
       - name: Build firmware
         working-directory: source
