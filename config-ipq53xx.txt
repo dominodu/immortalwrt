@@ -71,15 +71,11 @@ CONFIG_TARGET_PER_DEVICE_ROOTFS=y
 # CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_glinet_gl-be6500 is not set
 CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_jdcloud_re-cs-06=y
 CONFIG_TARGET_DEVICE_PACKAGES_qualcommbe_ipq53xx_DEVICE_jdcloud_re-cs-06=""
-CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_jdcloud_re-cs-08=y
-CONFIG_TARGET_DEVICE_PACKAGES_qualcommbe_ipq53xx_DEVICE_jdcloud_re-cs-08=""
+# CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_jdcloud_re-cs-08 is not set
 # CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_ubnt_u7-pro-xgs is not set
-CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p5=y
-CONFIG_TARGET_DEVICE_PACKAGES_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p5=""
-CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p8=y
-CONFIG_TARGET_DEVICE_PACKAGES_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p8=""
-CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be6500=y
-CONFIG_TARGET_DEVICE_PACKAGES_qualcommbe_ipq53xx_DEVICE_xiaomi_be6500=""
+# CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p5 is not set
+# CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be3600-pro-wired-p8 is not set
+# CONFIG_TARGET_DEVICE_qualcommbe_ipq53xx_DEVICE_xiaomi_be6500 is not set
 # end of Target Devices
 
 CONFIG_HAS_SUBTARGETS=y
