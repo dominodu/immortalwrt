@@ -84,13 +84,12 @@ jobs:
           # 2) 用户要求：加入 lucky（本地固化的 v3.5.0 核心 + LuCI）
           tar -xzf "$GITHUB_WORKSPACE/lucky-packages.tar.gz" -C .
 
-          # 3) 和上游一致的默认主题 + LAN IP + WiFi 默认值
+          # 3) 和上游一致的默认主题 + LAN IP
+          # WiFi 名由上游 wifi-scripts 自动取厂商名生成：OWRT-Jdcloud-2.4G / OWRT-Jdcloud-5.2G
+          # （router-tool 的 defaults.ssid/key 保持空，才能走到上游 default_ssid() 的取厂商名分支）
           find ./feeds/luci/collections/ -type f -name "Makefile" -exec sed -i "s/luci-theme-bootstrap/luci-theme-vantage/g" {} +
           find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js" -exec sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g" {} +
           sed -i 's/192\.168\.[0-9]*\.[0-9]*/192.168.6.1/g' ./package/base-files/files/bin/config_generate
-          for f in ./package/emortal/luci-app-router-tool/root/etc/config/router-tool ./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc; do
-            [ -f "$f" ] && sed -i "s/ssid '.*'/ssid 'OWRT'/g; s/key '.*'/key '12345678'/g" "$f"
-          done
 
           # 4) 上游构建主机适配：Go bootstrap / host LLVM BPF 工具链 / 关闭 host Python PGO
           bash "$GITHUB_WORKSPACE/Scripts/prepare-build-host.sh"
