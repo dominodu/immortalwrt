@@ -2,9 +2,9 @@ name: Build ImmortalWRT ipq53xx
 
 on:
   schedule:
-    # 北京时间次日 06:37 = UTC 22:37（前一天）；GitHub cron 用 UTC
-    # 放在清晨 6 点、并避开整点高负载时段，确保能拉到前一天 24:00 前提交的全部修改
-    - cron: "37 22 * * *"
+    # 北京时间 11:15 = UTC 03:15（同一天）；GitHub cron 用 UTC
+    # 避开整点与欧美高负载时段，减少定时触发被延迟的概率
+    - cron: "15 3 * * *"
   workflow_dispatch:
 
 permissions:
